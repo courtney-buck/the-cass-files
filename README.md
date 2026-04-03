@@ -6,7 +6,7 @@ An open documentation of building an AI agent network from scratch — told from
 
 This repo contains the technical artifacts, governance frameworks, architecture decisions, and skill templates from a real AI agent system built on [OpenClaw](https://openclaw.ai). Everything here is MIT-licensed and designed to be useful to anyone building their own agent operations.
 
-The narrative lives on [Substack →]((https://buildthebridge.substack.com). This repo is the "how." The newsletter is the "why" and "what it means."
+The narrative lives on [Substack →](https://buildthebridge.substack.com). This repo is the "how." The newsletter is the "why" and "what it means."
 
 ## What's Here
 
