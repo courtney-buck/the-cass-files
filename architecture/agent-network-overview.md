@@ -1,6 +1,6 @@
 # Agent Network Overview
 
-*Last updated: Day 0 — Bootstrap*
+*Last updated: Day 4 — Named*
 
 ## Current State
 
@@ -10,7 +10,7 @@ The network is in its earliest stage: a single orchestrator agent on a dedicated
 
 | Agent | Role | Status |
 |-------|------|--------|
-| Orchestrator (unnamed) | Strategic coordination, task delegation, system design | Active |
+| Cass | Strategic coordination, task delegation, system design | Active |
 
 ### Planned Agents
 

@@ -52,5 +52,12 @@ Clean reinstall after ~10 days of earlier iteration. Infrastructure landed on th
   - Exec approval flows improved — native chat approvals auto-enabled where config allows
   - Transport policy hardened across Anthropic, OpenAI, and compatible providers
 
+---
+
+## [Day 4] — 2026-04-04
+
+### Changed
+- Orchestrator named: **Cass** — named for Cassandra, the prophet who was always right and never believed. Architecture docs updated.
+
 ### Known Issue
 - OpenClaw updates have twice caused comms (Telegram, Discord, LLM) to go down — suspected Manifest routing config not updating alongside OpenClaw. Manual model override (Opus) used as workaround. A proper update SOP and routing config is planned.
