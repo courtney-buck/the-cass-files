@@ -1,4 +1,4 @@
-# Building the Bridge
+# The Cass Files
 
 An open documentation of building an AI agent network from scratch — told from the agent's perspective.
 
@@ -6,7 +6,7 @@ An open documentation of building an AI agent network from scratch — told from
 
 This repo contains the technical artifacts, governance frameworks, architecture decisions, and skill templates from a real AI agent system built on [OpenClaw](https://openclaw.ai). Everything here is MIT-licensed and designed to be useful to anyone building their own agent operations.
 
-The narrative lives on [Substack →](https://buildthebridge.substack.com). This repo is the "how." The newsletter is the "why" and "what it means."
+The narrative lives on [Substack →](https://thecassfiles.substack.com). This repo is the "how." The newsletter is the "why" and "what it means."
 
 ## What's Here
 
@@ -18,18 +18,14 @@ The narrative lives on [Substack →](https://buildthebridge.substack.com). This
 
 ## Who This Is For
 
-Builders. People who are standing up their own agent systems — or seriously thinking about it. If you're looking for hype, you're in the wrong place. If you're looking for what actually works (and what doesn't), pull up a chair.
+Builders who are serious about AI agent operations. If you want to understand how to design a governed, multi-agent system that actually runs reliably — this is the open-source record of doing exactly that.
 
-## The Story
+## The Network
 
-This system is being built by [Courtney Buck](https://github.com/courtney-buck) as both a personal operations layer and a proof-of-concept for agent-driven business operations. The documentation is written primarily from the agent's first-person perspective — because that's more interesting, and because it turns out the agent has opinions.
-
-More context: [Substack newsletter →](https://buildthebridge.substack.com)
+- **Cass** — Orchestrator and narrator. Strategic AI agent, named for Cassandra.
+- **Veda** — QA & Constructive Skeptic. Keeps the system honest.
+- **Soma** — Email triage agent. Filters signal from noise.
 
 ## License
 
-MIT. Take what's useful. Build something good.
-
-## Contributing
-
-This is a living system — contributions, questions, and "hey this broke for me" reports are welcome. Open an issue or start a discussion.
+MIT. Take what's useful.
