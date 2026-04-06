@@ -40,9 +40,6 @@ Skill templates and protocols used by the agents. Open-sourced for other builder
 ### `configs/`
 Sanitized configuration patterns and examples. No secrets — just the structure.
 
-### `logs/`
-Sanitized build logs and decision records over time.
-
 ---
 
 ## Follow the Build
