@@ -1,4 +1,22 @@
+# Never push
+*.env
+.env*
+secrets/
+credentials/
+auth-profiles.json
+*.key
+*.token
+
+# Memory and personal context
+memory/
+heartbeat-state.json
+
+# Drafts (live on Substack, not here)
+content-drafts/
+
+# OS
 .DS_Store
-*.log
-.env
+Thumbs.db
+
+# Node
 node_modules/

@@ -1,30 +1,48 @@
 # Agent Network Overview
 
-*Last updated: Day 4 — Named*
+*Last updated: Day 5 — Soma activated*
 
 ## Current State
 
-The network is in its earliest stage: a single orchestrator agent on a dedicated Mac Mini, communicating via Telegram and (soon) iMessage, with Discord as the logging backbone.
+A governed multi-agent network running on a dedicated Mac Mini, built on OpenClaw. Three named agents, three communication channels, three cron jobs running continuously.
 
-### Active Agents
+## Active Agents
 
-| Agent | Role | Status |
-|-------|------|--------|
-| Cass | Strategic coordination, task delegation, system design | Active |
+| Agent | Role | Model | Status |
+|-------|------|-------|--------|
+| **Cass** | Orchestrator — strategic coordination, system design, direct comms with Courtney | Claude Sonnet | Active |
+| **Veda** | QA & Constructive Skeptic — reviews skill installs, audits reasoning, runs governance reviews | GPT-4o | Active, 30-day probation (ends 2026-05-04) |
+| **Soma** | Email triage — classifies, labels, archives, summarizes email | GPT-4o-mini | Active, Phase 1 running |
 
-### Planned Agents
+## Infrastructure
 
-| Agent | Role | Status |
-|-------|------|--------|
-| Veda | QA & Constructive Skeptic — reviews agent work, audits skill files, flags concerns | Designed, not yet active |
-| Email Triage | Inbox management and categorization | Conceptual |
+- **Host:** Dedicated Mac Mini (always-on)
+- **Platform:** OpenClaw 2026.4.x
+- **Primary comms:** Telegram DM (Cass ↔ Courtney)
+- **Logging:** Discord (#command-center, #veda, #email-triage, #roundtable, #build-log)
+- **Model routing:** Native OpenClaw fallback chain (Claude → GPT-4o-mini → Gemini Flash)
 
-### Infrastructure
+## Cron Jobs
 
-- **Host:** Dedicated Mac Mini
-- **Platform:** OpenClaw
-- **Primary comms:** Telegram (current), iMessage (planned primary)
-- **Logging:** Discord (channel per agent)
-- **Model routing:** Manifest (auto)
+| Job | Schedule | Purpose |
+|-----|----------|---------|
+| `morning-brief` | 8am daily | Build agenda + agent status → Telegram |
+| `memory-sync` | Every 2h, 8am–10pm | Cross-channel context sync → daily memory file |
+| `soma-triage` | Every hour, 8am–10pm | Email classification → Gmail + Discord |
+| `github-push` | 12am daily | Commit meaningful workspace changes → this repo |
 
-This document will evolve as the network grows. Each significant change gets logged here and in the weekly build log.
+## Communication Architecture
+
+| Channel | Purpose |
+|---------|---------|
+| **Telegram** | The conversation — commands, approvals, morning brief |
+| **Discord** | The log — decisions, audit trail, agent outputs |
+| **Substack (The Cass Files)** | The story — build log, published day+1 |
+| **GitHub (this repo)** | The artifacts — specs, governance, configs |
+| **X (@cassbuilds)** | The amplifier — distribution (activating Day 6) |
+
+## Governance Model
+
+Three-tier decision framework: DO (autonomous), DRAFT (propose + wait for approval), NEVER (hard blocks). Full framework: [governance/cass-governance.md](governance/cass-governance.md)
+
+Veda review gate required for: skill installs, file operations, consequential reasoning audits.
