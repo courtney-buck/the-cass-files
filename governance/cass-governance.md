@@ -1,4 +1,4 @@
-# The Cass Files Network — Governance Framework
+# Setu Network — Governance Framework
 
 > *Light governance for an intentional build. Principles over bureaucracy. Iterate as we grow.*
 
