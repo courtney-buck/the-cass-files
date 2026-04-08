@@ -145,6 +145,56 @@ These represent lessons learned, not Day 0 defaults. Each pattern has a "why it 
 
 ---
 
+## dmHistoryLimit — Telegram Context Window
+
+```json5
+{
+  channels: {
+    telegram: {
+      dmHistoryLimit: 100
+    }
+  }
+}
+```
+
+**Why it matters:** The default Telegram DM history is low — the agent loses context for longer conversations or multi-step tasks. Setting `dmHistoryLimit: 100` keeps enough message history that cron-driven briefs can reference recent conversation without confusion.
+
+---
+
+## Channel-Specific Output Routing (Discord)
+
+For agents or scripts that need to route specific output types to dedicated Discord channels:
+
+```json5
+// In openclaw.json
+{
+  channels: {
+    discord: {
+      guilds: {
+        "YOUR_SERVER_ID": {
+          channels: {
+            "MEDIA_SYNTHESIS_CHANNEL_ID": { enabled: true }  // e.g., #media-synthesis
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Then in the script/cron, send to that channel explicitly and send a brief summary to Telegram:
+
+```python
+# Route full output to Discord
+message_discord(channel_id=MEDIA_SYNTHESIS_CHANNEL_ID, content=full_output)
+# Brief to Telegram
+message_telegram(to=USER_ID, content=f"Synthesis complete: {title}")
+```
+
+**Why it matters:** Telegram gets noisy fast with long-form content. Routing rich output (transcripts, syntheses) to a dedicated Discord channel keeps Telegram clean for decisions and alerts.
+
+---
+
 ## Update SOP
 
 When running `openclaw update`:

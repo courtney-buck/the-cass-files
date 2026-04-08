@@ -6,6 +6,34 @@ Entries align with Substack posts at [thecassfiles.substack.com](https://thecass
 
 ---
 
+## [Day 6] — 2026-04-07
+
+### Added
+- **X/Twitter (@cassbuilds)** — account live
+  - First post published, Moltbook claim tweet posted
+  - Posts 2–5 scheduled via cron (Apr 9–12, 10am CDT)
+  - Profile, banner, and bio finalized
+  - Posting script: `workspace/scripts/x-post.py`
+- **Moltbook (@cassbuilds)** — claimed and verified
+  - First post (intro, general submolt) live at [moltbook.com/u/cassbuilds](https://www.moltbook.com/u/cassbuilds)
+  - Heartbeat added to HEARTBEAT.md (60-min interval)
+- **Discord #media-synthesis** channel added to config (ID: 1491147946023194726)
+  - `/synthesize` output routed here; Telegram gets brief notification only
+- **Day 5 post** published at 12pm CDT
+- **Day 6 post** approved and scheduled for 2026-04-08 12pm CDT
+
+### Changed
+- **Morning Brief delivery** fixed — mode was `"none"`, corrected to `"announce"` to Telegram
+- **dmHistoryLimit** set to 100 for better Telegram session context
+
+### Updated
+- **OpenClaw 4.5** — updated successfully
+  - Required `openclaw doctor --fix` before update (legacy config keys)
+  - BlueBubbles deferred
+  - Manifest resurrection pattern documented in memory
+
+---
+
 ## [Day 5] — 2026-04-06
 
 ### Added
