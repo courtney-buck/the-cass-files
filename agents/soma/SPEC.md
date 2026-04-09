@@ -84,18 +84,51 @@ The agent should not require upfront training. It deduces classification rules f
 - Marketing/promotional emails (unsubscribe headers present)
 - Social media notifications (Facebook, Instagram, LinkedIn alerts)
 - Automated SaaS system alerts from non-priority senders
-- Google/Apple/platform security alerts and account notifications
+- Google/Apple/platform security alerts and account notifications IF >24 hours old
+- Google/Apple security alerts <24 hours old → ACTION (time-sensitive)
 - Verification codes and one-time passwords
 - Substack shareable asset emails and system notifications (from no-reply@substack.com)
 - Substack new subscriber notifications (subject: "New free subscriber" / "New paid subscriber") → AUTO
 - Substack recommendations emails (subject contains "Recommendations") → AUTO
-- Exception: thecassfiles@substack.com and thecassfiles@substack.com → always To Read (Courtney's own publication, The Cass Files)
+- Exception: thecassfiles@substack.com → always To Read (Courtney's own publication, The Cass Files)
+- Nextdoor notifications → AUTO
+- Grant Cardone / info@grantcardone.com → AUTO
+- Tripadvisor promotional emails → AUTO
+- Capital One promotional/referral emails → AUTO (not fraud alerts)
+- Delta Air Lines promotional emails → AUTO
+- All Day Running Co. → AUTO
+- FHD Leadership Academy / FHD Weekly Flyers (Globe Life) → AUTO
+- Allison Creary-Cornelius (Globe Life) → AUTO
+- Wasatch Trail Run Series → AUTO (Courtney no longer local)
+- PC Yoga Collective / Jenn Armstrong → AUTO (Courtney no longer local)
+- Remitly → AUTO (no active relationship)
+- House of Noa → AUTO
+- Run Your Pool → AUTO
+- The Citizenry → AUTO
+- Grove Collaborative promotional → AUTO
+- Course Creator 360 / Stockton → watch: DIGEST if content-valuable, AUTO if pure marketing
+
+**DIGEST:**
+- The Skimm (skimmhq@theskimm.com) → DIGEST
+- Harvard Business Review (emailteam@emails.hbr.org) → DIGEST
+- New York Times breaking news → DIGEST
+- Huckleberry (no-reply@hello.huckleberry-labs.com) → watch: DIGEST if parenting content, AUTO if pure marketing
+- Laura Meyer / Joy Brand Creative → watch: DIGEST if substantive content, AUTO if promotional
+- Remitly educational content → DIGEST if genuinely informational (rare — default AUTO)
+- Any newsletter with substantive content Courtney would skim but not act on
 
 **ACTION:**
 - Substack reader engagement: likes and comments (from reaction@mg1.substack.com, forum@mg1.substack.com) — reader engagement is worth surfacing
 - Direct replies to emails Courtney sent (reply-to threading)
 - Emails containing: "invoice," "contract," "sign," "urgent," "deadline" in subject
 - Emails from domains Courtney has replied to within the last 30 days
+- Dillon Buck (db@elevated.financial) → always ACTION
+- Credit Karma score alerts → ACTION (financial signal worth seeing)
+- Google security alerts <24 hours old → ACTION
+- Calendar invitations requiring response → ACTION
+- Emails from Nicole Smith Woodard → ACTION (known contact, AI consultancy)
+- ClawPlex DFW event updates → To Read (local event she attends)
+- Grove Collaborative order status (ships tomorrow, order updates) → To Read
 
 ### Low-Confidence Handling (observe and learn)
 - Unknown senders → default to READ, never AUTO

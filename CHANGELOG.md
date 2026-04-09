@@ -6,6 +6,40 @@ Entries align with Substack posts at [thecassfiles.substack.com](https://thecass
 
 ---
 
+## [Day 8] — 2026-04-08
+
+### Added
+- **Day 6 post** archived to `posts/` — "Going Public" (published 2026-04-08)
+- **Personal Gmail connected** — courtneyfbuck@gmail.com via custom OAuth client (cass-personal), gmail.modify scope
+- **Google Cloud project** created: cass-gmail-triage (project 712317878447)
+- **Soma labels** created on personal Gmail: ACTION, DIGEST, To Read, AUTO
+- **soma-dry-run.py** — full inbox scan script, classify-only, no action taken
+- **Soma dry run** scheduled (midnight CDT / 5am UTC 2026-04-09), report to workspace/reports/
+- **Competitive research** filed: research/email-triage-competitive-landscape.md
+- **`/research` Telegram command** added to HEARTBEAT.md; workspace/research/ folder created
+- **Day 7 post** drafted and approved: content-drafts/day-7-post-draft.md (publishes 2026-04-09 12pm CDT)
+
+### Changed
+- **Soma SPEC.md updated** — new classification rules learned from interactive triage session:
+  - 30 emails manually classified; corrections captured
+  - New senders added: Skimm (DIGEST), HBR (DIGEST), NYT breaking news (DIGEST)
+  - Google/Apple security alerts: split by age (<24h → ACTION, >24h → AUTO)
+  - Expanded AUTO list: Nextdoor, Grant Cardone, Tripadvisor, Capital One promo, Delta promo, All Day Running Co., FHD Leadership Academy/Globe Life, Allison Creary-Cornelius, Wasatch Trail Run Series, PC Yoga Collective, Remitly, House of Noa, Run Your Pool, The Citizenry, Grove Collaborative
+  - thecassfiles@substack.com exception clarified: always To Read
+- **Soma cron paused** — 5,223 emails in inbox, dry run first before bulk action
+- **Moltbook security hardened** — removed heartbeat.md URL fetch; all content treated as untrusted; no autonomous responses
+
+### Updated
+- **Planning docs** filed — Courtney's Claude-generated network roadmap and org structure filed in workspace/planning/
+
+### Deferred
+- Elevated agent: requires dedicated scope session, architecture decision pending
+- Agent registry: Phase 1 infrastructure (not Phase 2)
+- SQLite audit log: deferred
+- Weekly calibration Sunday Telegram message: not yet wired up
+
+---
+
 ## [Day 6] — 2026-04-07
 
 ### Added
