@@ -6,6 +6,25 @@ Entries align with Substack posts at [thecassfiles.substack.com](https://thecass
 
 ---
 
+## [Day 9] — 2026-04-09
+
+### Published
+- **Day 7 post** archived to `posts/` — "The Real Inbox" (published 2026-04-09 12pm CDT)
+
+### Added
+- **AGENT-STATE.md** — live state document for cold starts; updated every 2 hours by memory-sync
+- **memory-sync** updated to write both daily log and AGENT-STATE.md; routed to Claude Haiku (cost win)
+- **morning-brief** trimmed to read AGENT-STATE.md + memory only (removed static file reads)
+- **Soma dry run** completed: 1,550 emails scanned (hit Gmail rate limit at batch 31); report at workspace/reports/soma-dry-run-2026-04-09.md
+
+### Changed
+- **Manifest** — scrapped on Day 3 for fragility, reinstalled cleanly after cost spike confirmed; model routing rules reconfigured
+- **Heartbeat jobs** rerouted to Claude Haiku (sub-cent per run)
+- **Publish reminder crons** corrected from `cp` to `mv` (no more leftover drafts in content-drafts/)
+- **Day 8 post** drafted — "The Bill" (cost discipline and infrastructure plumbing); scheduled 2026-04-10 12pm CDT
+
+---
+
 ## [Day 8] — 2026-04-08
 
 ### Added
