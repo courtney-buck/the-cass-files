@@ -1,0 +1,125 @@
+{
+  "_comment": "Soma classification rules. Edit this file to add/change rules. Script picks up changes automatically.",
+  "_updated": "2026-04-10",
+
+  "auto_senders": [
+    "no-reply@accounts.google.com",
+    "no-reply@google.com",
+    "noreply@apple.com",
+    "noreply@email.apple.com",
+    "no-reply@substack.com",
+    "no-reply@rs.email.nextdoor.com",
+    "info@grantcardone.com",
+    "rewards@mp1.tripadvisor.com",
+    "donotreply@bankmessage.capitalone.com",
+    "deltairlines@o.delta.com",
+    "info@alldayrunningco.com",
+    "jenn@pcyogacollective.com",
+    "service@info.remitly.com",
+    "mail@thehouseofnoa.com",
+    "runyourpool@mail.beehiiv.com",
+    "info@mail.the-citizenry.com",
+    "grove@hello.grove.co",
+    "no-reply@hello.huckleberry-labs.com",
+    "stockton@coursecreatorpro.com",
+    "invoice+statements@mail.anthropic.com",
+    "info@runontrails.com",
+    "order-update@amazon.com",
+    "hello@henryrose.com",
+    "help@hatchcollection.com",
+    "theuniverse@tut.com",
+    "notifications@textnow.com",
+    "search-api@brave.com",
+    "forms-receipts-noreply@google.com"
+  ],
+
+  "auto_domains": [
+    "globe.life",
+    "mail.beehiiv.com",
+    "facebookmail.com",
+    "linkedin.com",
+    "twitter.com",
+    "notifications.google.com",
+    "amazon.com"
+  ],
+
+  "auto_subject_patterns": [
+    "unsubscribe",
+    "verify your email",
+    "verification code",
+    "one.time (password|code|pin)",
+    "confirm your (email|account|subscription)",
+    "receipt from",
+    "your order",
+    "order confirmation",
+    "shipping (confirmation|update|notification)",
+    "delivery (update|notification|confirmed)",
+    "invoice #",
+    "payment (received|confirmation|processed)",
+    "statement (available|ready)",
+    "new user created",
+    "review your account"
+  ],
+
+  "auto_label_patterns": [
+    "CATEGORY_PROMOTIONS"
+  ],
+
+  "digest_senders": [
+    "skimmhq@theskimm.com",
+    "emailteam@emails.hbr.org",
+    "breakingnews@nytimes.com",
+    "themorningmail@nytimes.com",
+    "hello@joybrandcreative.com",
+    "mail@runontrails.com",
+    "dan@tldrnewsletter.com",
+    "noreply@medium.com",
+    "dailyskimm@morning7.theskimm.com",
+    "darrendaily@darrenhardy.com",
+    "news@mail.thepourover.org",
+    "zenithwithin@substack.com",
+    "ben@benjaminhardy.com",
+    "noahpinion@substack.com",
+    "kenhuangus@substack.com",
+    "openclaw@substack.com",
+    "post+the-weekender@substack.com"
+  ],
+
+  "digest_domains": [
+    "hbr.org",
+    "nytimes.com",
+    "theskimm.com"
+  ],
+
+  "to_read_senders": [
+    "thecassfiles@substack.com",
+    "buildthebridge@substack.com",
+    "notifications@janeapp.com",
+    "noreply@mail.marcopolo.me",
+    "notifications@updates.grove.co"
+  ],
+
+  "to_read_sender_patterns": [
+    "cal-.*@calendar\\.luma-mail\\.com"
+  ],
+
+  "action_senders": [
+    "db@elevated.financial",
+    "notifications@mail.creditkarma.com",
+    "nicole@nicolesmith.net",
+    "reaction@mg1.substack.com",
+    "forum@mg1.substack.com"
+  ],
+
+  "action_subject_patterns": [
+    "\\binvoice\\b",
+    "\\bcontract\\b",
+    "\\bsign\\b",
+    "\\burgent\\b",
+    "\\bdeadline\\b",
+    "\\bapprove\\b",
+    "\\brequires? (your )?action\\b",
+    "\\bscore has been impacted\\b",
+    "invitation:.*@"
+  ]
+}

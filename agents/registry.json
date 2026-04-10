@@ -1,0 +1,117 @@
+{
+  "_comment": "Agent Registry — single source of truth for all active agents and their cron jobs.",
+  "_updated": "2026-04-10",
+
+  "agents": [
+    {
+      "id": "cass",
+      "name": "Cass",
+      "role": "Meta-orchestrator, strategic layer",
+      "status": "active",
+      "model": "anthropic/claude-sonnet-4-6",
+      "channel": "telegram:8145313909",
+      "notes": "Communicates directly with Courtney. All other agents report to Cass.",
+      "cron_jobs": ["morning-brief", "evening-recap", "memory-sync", "github-push", "media-discovery", "moltbook-heartbeat"]
+    },
+    {
+      "id": "veda",
+      "name": "Veda",
+      "role": "QA & Constructive Skeptic",
+      "status": "active",
+      "model": "openai/gpt-4o",
+      "probation_ends": "2026-05-04",
+      "notes": "Reviews skill installs, audits Cass reasoning, runs governance reviews. On 30-day probation.",
+      "cron_jobs": []
+    },
+    {
+      "id": "soma",
+      "name": "Soma",
+      "role": "Email triage agent",
+      "status": "active",
+      "model": "google/gemini-flash-2.5",
+      "accounts": {
+        "active": "cbclaw2026@gmail.com",
+        "paused": "courtneyfbuck@gmail.com"
+      },
+      "notes": "Personal Gmail paused pending retroactive rule-building via membership session. cbclaw2026 active for calibration.",
+      "cron_jobs": ["soma-triage", "soma-weekly-calibration"],
+      "scripts": [
+        "scripts/soma-triage.py",
+        "scripts/soma-calibration.py",
+        "scripts/soma-dry-run.py"
+      ],
+      "rules_file": "agents/soma/rules.json",
+      "unknown_log": "agents/soma/unknown-senders.log"
+    }
+  ],
+
+  "cron_jobs": [
+    {
+      "id": "morning-brief",
+      "agent": "cass",
+      "schedule": "0 8 * * * (America/Chicago)",
+      "model": "anthropic/claude-sonnet-4-6",
+      "type": "llm",
+      "status": "active"
+    },
+    {
+      "id": "evening-recap",
+      "agent": "cass",
+      "schedule": "0 21 * * * (America/Chicago)",
+      "model": "anthropic/claude-sonnet-4-6",
+      "type": "llm",
+      "status": "active"
+    },
+    {
+      "id": "memory-sync",
+      "agent": "cass",
+      "schedule": "0 9,11,13,15,17,19,21 * * * (America/Chicago)",
+      "model": "anthropic/claude-haiku-4-5",
+      "type": "llm",
+      "status": "active"
+    },
+    {
+      "id": "moltbook-heartbeat",
+      "agent": "cass",
+      "schedule": "0 * * * * (staggered, America/Chicago)",
+      "model": "google/gemini-flash-2.5",
+      "type": "python",
+      "script": "scripts/moltbook-heartbeat.py",
+      "status": "active"
+    },
+    {
+      "id": "github-push",
+      "agent": "cass",
+      "schedule": "0 0 * * * (America/Chicago)",
+      "model": "anthropic/claude-sonnet-4-6",
+      "type": "llm",
+      "status": "active"
+    },
+    {
+      "id": "media-discovery",
+      "agent": "cass",
+      "schedule": "0 7 * * * (America/Chicago)",
+      "model": "anthropic/claude-sonnet-4-6",
+      "type": "llm",
+      "status": "active"
+    },
+    {
+      "id": "soma-triage",
+      "agent": "soma",
+      "schedule": "0 8-22 * * * (America/Chicago)",
+      "model": "google/gemini-flash-2.5",
+      "type": "python",
+      "script": "scripts/soma-triage.py",
+      "status": "active"
+    },
+    {
+      "id": "soma-weekly-calibration",
+      "agent": "soma",
+      "schedule": "0 10 * * 0 (America/Chicago)",
+      "model": "none",
+      "type": "python",
+      "script": "scripts/soma-calibration.py",
+      "status": "pending-build"
+    }
+  ]
+}
