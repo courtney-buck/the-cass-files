@@ -1,6 +1,6 @@
 # AGENT-STATE.md
 # Current system state. Read this before acting in any isolated or low-context session.
-# Updated by memory-sync every 2 hours. Last updated: 2026-04-10 09:00 CDT
+# Updated by memory-sync every 2 hours. Last updated: 2026-04-10 19:00 CDT
 
 ---
 
@@ -16,11 +16,12 @@
 | morning-brief | claude-sonnet-4-6 | Strategic, needs reasoning |
 | evening-recap | claude-sonnet-4-6 | Strategic, reads memory |
 | memory-sync | claude-haiku-4-5 | Read/compare/append — no reasoning needed |
-| moltbook-heartbeat | claude-haiku-4-5 | Single API call + summarize |
-| github-push | claude-sonnet-4-6 | Judgment on what to commit |
+| moltbook-heartbeat | google/gemini-flash-2.5 | Single API call + summarize |
+| github-push | google/gemini-flash-2.5 | Judgment on what to commit |
 | media-discovery | claude-sonnet-4-6 | Quality filtering requires judgment |
-| soma-triage | openai/gpt-4o-mini | Email classification, cost-sensitive |
-| publish-reminders | claude-haiku-4-5 | Simple file move + notification |
+| soma-triage | google/gemini-flash-2.5 | Email classification, cost-sensitive |
+| publish-reminders | google/gemini-flash-2.5 | Simple file move + notification |
+| soma-weekly-calibration | google/gemini-flash-2.5 | Weekly calibration, script-driven |
 
 ---
 
@@ -39,14 +40,21 @@
 | morning-brief | 8am CDT daily | sonnet | ✅ Running |
 | evening-recap | 9pm CDT daily | sonnet | ✅ Running |
 | memory-sync | 9,11,13,15,17,19,21 CDT | haiku | ✅ Running |
-| moltbook-heartbeat | Hourly (staggered) | haiku | ✅ Running |
-| github-push | Midnight CDT | sonnet | ✅ Running |
+| moltbook-heartbeat | Hourly (staggered) | gemini-flash-2.5 | ✅ Running |
+| github-push | Midnight CDT | gemini-flash-2.5 | ✅ Running |
 | media-discovery | 7am CDT daily | sonnet | ✅ Running |
-| soma-triage | Hourly 8am–10pm CDT | gpt-4o-mini | ⚠️ MISSING — cron job not found in job list as of Apr 10. Needs re-creation or investigation |
-| x-post-3 | Apr 10 10am CDT | sonnet | ⏳ Scheduled |
+| soma-triage | Hourly 8am–10pm CDT | gemini-flash-2.5 | ✅ Running |
+| soma-weekly-calibration | Sundays 10am CDT | gemini-flash-2.5 | ✅ Running |
 | x-post-4 | Apr 11 10am CDT | sonnet | ⏳ Scheduled |
 | x-post-5 | Apr 12 10am CDT | sonnet | ⏳ Scheduled |
-| day8-publish-reminder | Apr 10 12pm CDT | haiku | ⏳ Scheduled |
+| x-post-6 | Apr 13 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-7 | Apr 14 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-8 | Apr 15 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-9 | Apr 16 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-10 | Apr 17 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-11 | Apr 18 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-12 | Apr 19 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| day9-publish-reminder | Apr 11 12pm CDT | gemini-flash-2.5 | ⏳ Scheduled |
 
 ---
 
@@ -54,10 +62,11 @@
 | Post | Status | Scheduled |
 |------|--------|-----------|
 | Day 1–7 | Published ✅ | — |
-| Day 8 | Approved, in drafts | Apr 10, 12pm CDT |
-| Day 9+ | Not started | — |
+| Day 8 | Published ✅ | Apr 10, 12pm CDT |
+| Day 9 | Approved, in drafts | Apr 11, 12pm CDT |
+| Day 10+ | Not started | — |
 
-**X post queue:** Apr 10–12 at 10am CDT. Queue needs replenishment after Apr 12.
+**X post queue:** Apr 11–19 at 10am CDT (posts 4–12). Queue replenished through Apr 19.
 
 ---
 
@@ -92,7 +101,6 @@
 ---
 
 ## Known Issues / Watch Items
-- **Soma triage cron missing** — not present in cron job list as of Apr 10 09:00. Was listed in AGENT-STATE.md as active. May need re-creation.
-- Soma triage was timing out at 120s on cbclaw2026 — monitor next run
+- Soma triage was timing out at 120s on cbclaw2026 — now on gemini-flash-2.5 with 60s timeout, running clean
 - Manifest had been running 3-4x prior to Apr 9 reinstall — root cause: multiple installs accumulated. Now clean.
 - Publish reminder crons previously used `cp` (left drafts behind). Now corrected to `mv`.
