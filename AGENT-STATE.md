@@ -1,6 +1,6 @@
 # AGENT-STATE.md
 # Current system state. Read this before acting in any isolated or low-context session.
-# Updated by memory-sync every 2 hours. Last updated: 2026-04-10 19:00 CDT
+# Updated by memory-sync every 2 hours. Last updated: 2026-04-12 21:00 CDT
 
 ---
 
@@ -45,8 +45,6 @@
 | media-discovery | 7am CDT daily | sonnet | ✅ Running |
 | soma-triage | Hourly 8am–10pm CDT | gemini-flash-2.5 | ✅ Running |
 | soma-weekly-calibration | Sundays 10am CDT | gemini-flash-2.5 | ✅ Running |
-| x-post-4 | Apr 11 10am CDT | sonnet | ⏳ Scheduled |
-| x-post-5 | Apr 12 10am CDT | sonnet | ⏳ Scheduled |
 | x-post-6 | Apr 13 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-7 | Apr 14 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-8 | Apr 15 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
@@ -54,7 +52,6 @@
 | x-post-10 | Apr 17 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-11 | Apr 18 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-12 | Apr 19 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| day9-publish-reminder | Apr 11 12pm CDT | gemini-flash-2.5 | ⏳ Scheduled |
 
 ---
 
@@ -63,10 +60,10 @@
 |------|--------|-----------|
 | Day 1–7 | Published ✅ | — |
 | Day 8 | Published ✅ | Apr 10, 12pm CDT |
-| Day 9 | Approved, in drafts | Apr 11, 12pm CDT |
+| Day 9 | Published ✅ | Apr 11, 12pm CDT |
 | Day 10+ | Not started | — |
 
-**X post queue:** Apr 11–19 at 10am CDT (posts 4–12). Queue replenished through Apr 19.
+**X post queue:** Posts 4–5 published (Apr 11–12). Posts 6–12 scheduled Apr 13–19 at 10am CDT. Replenishment needed ~Apr 17.
 
 ---
 
@@ -75,8 +72,6 @@
 - Soma personal Gmail: paused until Courtney completes retroactive rule-building
 - Substack custom domain / setup: awaiting response from Substack support
 - Elevated agent: architecture session needed before any build
-- Agent registry: identified as Phase 1 infrastructure, not yet built
-- Weekly calibration Sunday Telegram message: not yet wired up
 - SQLite audit log for Soma: deferred
 
 ---
