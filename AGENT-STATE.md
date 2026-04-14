@@ -1,6 +1,6 @@
 # AGENT-STATE.md
 # Current system state. Read this before acting in any isolated or low-context session.
-# Updated by memory-sync every 2 hours. Last updated: 2026-04-12 21:00 CDT
+# Updated by memory-sync every 2 hours. Last updated: 2026-04-13 23:06 CDT
 
 ---
 
@@ -45,7 +45,7 @@
 | media-discovery | 7am CDT daily | sonnet | ✅ Running |
 | soma-triage | Hourly 8am–10pm CDT | gemini-flash-2.5 | ✅ Running |
 | soma-weekly-calibration | Sundays 10am CDT | gemini-flash-2.5 | ✅ Running |
-| x-post-6 | Apr 13 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| x-post-6 | Apr 13 10am CDT | gemini-flash-2.5 | ✅ Fired |
 | x-post-7 | Apr 14 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-8 | Apr 15 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
 | x-post-9 | Apr 16 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
@@ -58,12 +58,12 @@
 ## Content Pipeline
 | Post | Status | Scheduled |
 |------|--------|-----------|
-| Day 1–7 | Published ✅ | — |
-| Day 8 | Published ✅ | Apr 10, 12pm CDT |
-| Day 9 | Published ✅ | Apr 11, 12pm CDT |
-| Day 10+ | Not started | — |
+| Day 1–9 | Published ✅ | — |
+| Day 10 | Published ✅ | Apr 12, ~7pm CDT |
+| Day 11 | Published ✅ | Moved to published/ |
+| Day 12+ | Not started | — |
 
-**X post queue:** Posts 4–5 published (Apr 11–12). Posts 6–12 scheduled Apr 13–19 at 10am CDT. Replenishment needed ~Apr 17.
+**X post queue:** Posts 4–6 published (Apr 11–13). Posts 7–12 scheduled Apr 14–19 at 10am CDT. Replenishment needed ~Apr 17.
 
 ---
 
