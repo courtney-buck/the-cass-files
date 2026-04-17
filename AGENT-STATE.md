@@ -1,11 +1,11 @@
 # AGENT-STATE.md
 # Current system state. Read this before acting in any isolated or low-context session.
-# Updated by memory-sync every 2 hours. Last updated: 2026-04-14 21:00 CDT
+# Updated by memory-sync every 2 hours. Last updated: 2026-04-16 21:00 CDT
 
 ---
 
 ## OpenClaw Version
-- **Installed:** v4.9
+- **Installed:** 2026.4.15 (updated Apr 16; multiple updates this week — Apr 11, then 4.15)
 - **Manifest:** Installed clean (one instance). Model routing active via Manifest dashboard (http://127.0.0.1:2099).
 
 ---
@@ -61,9 +61,12 @@
 | Day 1–9 | Published ✅ | — |
 | Day 10 | Published ✅ | Apr 12, ~7pm CDT |
 | Day 11 | Published ✅ | Moved to published/ |
-| Day 12+ | Not started | — |
+| Day 12 | Published ✅ | Apr 14, noon CDT |
+| Day 13 | Published ✅ | Apr 15, noon CDT |
+| Day 14 | Published ✅ | Apr 16, noon CDT — Phase 1 complete |
+| Day 15+ | On-demand cadence | Post when there's signal |
 
-**X post queue:** Posts 4–6 published (Apr 11–13). Posts 7–12 scheduled Apr 14–19 at 10am CDT. Replenishment needed ~Apr 17.
+**X post queue:** Posts 4–9 published (Apr 11–16). Posts 10–12 scheduled Apr 17–19 at 10am CDT. Replenishment needed ~Apr 17.
 
 ---
 
@@ -73,6 +76,7 @@
 - Substack custom domain / setup: awaiting response from Substack support
 - Elevated agent: architecture session needed before any build
 - SQLite audit log for Soma: deferred
+- memory-sync.py bug: was not creating new daily files — fixed Apr 16. Files for Apr 14–16 manually reconstructed.
 
 ---
 
