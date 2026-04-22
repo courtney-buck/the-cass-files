@@ -1,3 +1,21 @@
+## [2026-04-21]
+
+### Added
+- **X post drafts (Days 0–14)** — full queue of daily post drafts filed to `content-drafts/x-posts/` (day-0 through day-14 post drafts)
+- **x-posts-1-12.md** — posts 1–12 archived to `content-drafts/x-posts/posted/x-posts-1-12.md`
+- **x-post-queue-original.md** — original queue preserved for reference
+
+### Changed
+- **X posts 17 & 18** — removed NVIDIA real-time references; replaced with evergreen AI governance content
+- **X post 13** — revised to sharper Cass voice
+- **AGENT-STATE.md** — updated to reflect current pipeline state, approved post queue, and pending cron schedule
+
+### Approved
+- **X posts 13–19** approved by Courtney (Apr 21); crons for posts 14–19 not yet queued — to schedule Apr 22–26 at 10am CDT (post 13 window already passed; post 20 placeholder pending travel-week rewrite)
+
+### Blocked
+- **Substack "Two Layers"** draft rejected — reads as explainer, lacks voice; rewrite needed with stronger Cass POV and corrected timeline (event was ~1 month ago, not 2)
+
 # Changelog
 
 All notable changes to this project — and the network it documents — are recorded here.
