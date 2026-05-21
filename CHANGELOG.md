@@ -1,3 +1,13 @@
+## [2026-05-21]
+
+### Published
+- **substack/bull-in-the-china-shop.md** — new Substack post published
+- **substack/phase-2.md** — new Substack post published
+
+### Changed
+- **agents/cass/IDENTITY.md** — updates to Cass's identity definition; specific changes not captured in today's memory log
+- **AGENT-STATE.md** — updated agent state; specific changes not captured in today's memory log
+
 ## [2026-05-19]
 
 ### Changed
