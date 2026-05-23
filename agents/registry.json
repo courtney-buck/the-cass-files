@@ -2,7 +2,38 @@
   "_comment": "Agent Registry — single source of truth for all active agents and their cron jobs.",
   "_updated": "2026-04-10",
 
+  "_updated": "2026-05-22",
+
   "agents": [
+    {
+      "id": "meru",
+      "name": "Meru",
+      "role": "Personal orchestrator for Dillon Buck",
+      "status": "active",
+      "model": "anthropic/claude-sonnet-4-6",
+      "channel": "claw-messenger",
+      "notes": "Serves Dillon, reports to Cass for governance. Ridge is Meru's email triage sub-agent.",
+      "sub_agents": ["ridge"]
+    },
+    {
+      "id": "ridge",
+      "name": "Ridge",
+      "role": "Email triage sub-agent for db@elevated.financial (under Meru)",
+      "status": "built-pending-veda",
+      "model": "qwen2.5:7b (local, classification) + claude-sonnet-4-6 (escalation)",
+      "inbox": "db@elevated.financial",
+      "reports_to": "meru",
+      "scripts": [
+        "agents/meru/ridge/ridge_poll.py",
+        "agents/meru/ridge/ridge_trigger.py",
+        "agents/meru/ridge/ridge_digest.py",
+        "agents/meru/ridge/ridge_verify.py"
+      ],
+      "state_db": "agents/meru/ridge/ridge_state.db",
+      "payloads_dir": "agents/meru/ridge/payloads",
+      "notes": "Built 2026-05-22. Awaiting Veda review before activation. Crons are live — ridge-poll will fire on next 30-min tick.",
+      "cron_jobs": ["ridge-poll", "ridge-morning-digest", "ridge-midday-digest", "ridge-eod-digest", "ridge-daily-verify"]
+    },
     {
       "id": "cass",
       "name": "Cass",

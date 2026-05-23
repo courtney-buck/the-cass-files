@@ -1,3 +1,9 @@
+## [2026-05-23]
+
+### Changed
+- **agents/registry.json** — updated agent registry; specific changes not captured in today's memory log
+- **AGENT-STATE.md** — updated agent state; specific changes not captured in today's memory log
+
 ## [2026-05-21]
 
 ### Published
