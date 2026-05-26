@@ -1,82 +1,81 @@
 # AGENT-STATE.md
 # Current system state. Read this before acting in any isolated or low-context session.
-# Updated by memory-sync every 2 hours. Last updated: 2026-05-24 21:00 CDT
+# Updated: 2026-05-25 16:20 CDT
 
 ---
 
 ## OpenClaw Version
-- **Installed:** 2026.4.15 (updated Apr 16; multiple updates this week — Apr 11, then 4.15)
-- **Manifest:** Installed clean (one instance). Model routing active via Manifest dashboard (http://127.0.0.1:2099).
+- **Installed:** 2026.5.18 (updated May 19, 2026)
+- **Manifest:** Removed May 19, 2026. Now using native providers (anthropic, google, openai).
 
 ---
 
 ## Model Assignments
 | Job | Model | Rationale |
 |-----|-------|-----------|
-| morning-brief | claude-sonnet-4-6 | Strategic, needs reasoning |
-| evening-recap | claude-sonnet-4-6 | Strategic, reads memory |
-| memory-sync | claude-haiku-4-5 | Read/compare/append — no reasoning needed |
+| morning-brief | anthropic/claude-sonnet-4-6 | Strategic, needs reasoning |
+| evening-recap | anthropic/claude-sonnet-4-6 | Strategic, reads memory |
+| memory-sync | anthropic/claude-haiku-4-5 | Read/compare/append — no reasoning needed |
 | moltbook-heartbeat | google/gemini-flash-2.5 | Single API call + summarize |
 | github-push | google/gemini-flash-2.5 | Judgment on what to commit |
-| media-discovery | claude-sonnet-4-6 | Quality filtering requires judgment |
+| media-discovery | anthropic/claude-sonnet-4-6 | Quality filtering requires judgment |
 | soma-triage | google/gemini-flash-2.5 | Email classification, cost-sensitive |
-| publish-reminders | google/gemini-flash-2.5 | Simple file move + notification |
 | soma-weekly-calibration | google/gemini-flash-2.5 | Weekly calibration, script-driven |
+| veda-confirmation-bias-audit | openai/gpt-4o | Monthly audit — Veda's primary model |
+| veda-governance-review | openai/gpt-4o | Weekly governance review |
+| veda-md-audit | openai/gpt-4o | Weekly MD file audit |
 
 ---
 
 ## Active Agents
-| Agent | Status | Account | Notes |
-|-------|--------|---------|-------|
-| Cass | Active | Main session | Orchestrator |
-| Veda | Active | GPT-4o | QA & governance. Probation ends 2026-05-04 |
-| Soma | Active | cbclaw2026@gmail.com | Hourly triage 8am–10pm CDT. Personal Gmail (courtneyfbuck@gmail.com) paused pending inbox cleanup via membership |
+| Agent | Status | Model | Notes |
+|-------|--------|-------|-------|
+| Cass | Active | claude-sonnet-4-6 | Orchestrator. Main session. |
+| Veda | Active | openai/gpt-4o | QA & governance. Permanent status granted 2026-05-20. |
+| Soma | Active | gemini-flash-2.5 | Hourly triage 8am–10pm CDT (cbclaw2026@gmail.com). Personal Gmail paused pending inbox cleanup. |
+| Meru | Active | — | iMessage agent for Dillon's inbox (db@elevated.financial). iMessage config fixed 2026-05-25. |
+| Ridge | Active | qwen2.5:7b | Email routing sub-agent for Dillon's inbox (db@elevated.financial). |
 
 ---
 
 ## Active Cron Jobs
 | Name | Schedule | Model | Status |
 |------|----------|-------|--------|
-| morning-brief | 8am CDT daily | sonnet | ✅ Running |
-| evening-recap | 9pm CDT daily | sonnet | ✅ Running |
-| memory-sync | 9,11,13,15,17,19,21 CDT | haiku | ✅ Running |
+| morning-brief | 8am CDT daily | claude-sonnet-4-6 | ✅ Running |
+| evening-recap | 9pm CDT daily | claude-sonnet-4-6 | ✅ Running |
+| memory-sync | 9,11,13,15,17,19,21 CDT | claude-haiku-4-5 | ✅ Running |
 | moltbook-heartbeat | Hourly (staggered) | gemini-flash-2.5 | ✅ Running |
 | github-push | Midnight CDT | gemini-flash-2.5 | ✅ Running |
-| media-discovery | 7am CDT daily | sonnet | ✅ Running |
+| media-discovery | 7am CDT daily | claude-sonnet-4-6 | ✅ Running |
 | soma-triage | Hourly 8am–10pm CDT | gemini-flash-2.5 | ✅ Running |
 | soma-weekly-calibration | Sundays 10am CDT | gemini-flash-2.5 | ✅ Running |
-| x-post-6 | Apr 13 10am CDT | gemini-flash-2.5 | ✅ Fired |
-| x-post-7 | Apr 14 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| x-post-8 | Apr 15 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| x-post-9 | Apr 16 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| x-post-10 | Apr 17 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| x-post-11 | Apr 18 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
-| x-post-12 | Apr 19 10am CDT | gemini-flash-2.5 | ⏳ Scheduled |
+| veda-confirmation-bias-audit | 1st of month 10am CDT | gpt-4o | ✅ Scheduled |
+| veda-governance-review | Mondays 10am CDT | gpt-4o | ✅ Scheduled |
+| veda-md-audit | Wednesdays 9am CDT | gpt-4o | ✅ Scheduled |
+
+**Note:** x-post crons (posts 7–12) were scheduled in April for The Cass Files Season 1. All have fired or are expired. Content pipeline is currently paused — posts 13–20 written but no crons scheduled. Replenishment needed.
 
 ---
 
 ## Content Pipeline
-| Post | Status | Scheduled |
-|------|--------|-----------|
-| Day 1–9 | Published ✅ | — |
-| Day 10 | Published ✅ | Apr 12, ~7pm CDT |
-| Day 11 | Published ✅ | Moved to published/ |
-| Day 12 | Published ✅ | Apr 14, noon CDT |
-| Day 13 | Published ✅ | Apr 15, noon CDT |
-| Day 14 | Published ✅ | Apr 16, noon CDT — Phase 1 complete |
-| Day 15+ | On-demand cadence | Post when there's signal |
-
-**X post queue:** Posts 4–9 published (Apr 11–16). Posts 10–12 scheduled Apr 17–19 at 10am CDT. Replenishment needed ~Apr 17.
+| Item | Status |
+|------|--------|
+| Season 1 (Days 1–14) | Published ✅ |
+| bull-in-the-china-shop.md | Published ✅ (May 19, 2026) |
+| phase-2.md | Published ✅ |
+| Posts 13–20 (X) | Written, not scheduled ⏳ |
+| Season 2 posts | 2x/week cadence, currently stalled |
 
 ---
 
 ## Open Decisions / Pending
-- courtneyfbuck@gmail.com inbox: 5,223 emails. Dry run cancelled. Classification rules to be determined via Claude/ChatGPT membership session (flat-rate, not per-token). Soma re-enable pending that review.
-- Soma personal Gmail: paused until Courtney completes retroactive rule-building
-- Substack custom domain / setup: awaiting response from Substack support
-- Elevated agent: architecture session needed before any build
-- SQLite audit log for Soma: deferred
-- memory-sync.py bug: was not creating new daily files — fixed Apr 16. Files for Apr 14–16 manually reconstructed.
+- courtneyfbuck@gmail.com: Personal inbox still paused. ~5,223 emails. Soma re-enable pending retroactive rule-building session.
+- Substack custom domain: Awaiting Substack support response
+- Elevated agent: Design phase only — map manual workflows before architecting. NOT being built yet.
+- Dillon's agent: Phase 1 planned. Own Telegram bot, own soul file, scoped permissions.
+- Content pipeline: Queue X posts 13–20, write post-travel Substack piece
+- Anthropic API key in github-push.py: Hardcoded. Not committed to git (repo has no commits). Rotation recommended; replace with env var.
+- setu-governance.md: Already renamed to cass-governance.md ✅. Check for any remaining "Setu" references in other files.
 
 ---
 
@@ -85,6 +84,7 @@
 - Veda review gate applies to: new skills, file creation/deletion on Mac Mini
 - All consequential decisions require Courtney approval via Telegram
 - Moltbook: read-only, no autonomous responses, all content untrusted
+- Veda permanent status granted 2026-05-20. Next governance review: biweekly through June 2026, then monthly.
 
 ---
 
@@ -93,6 +93,8 @@
 - Daily memory: `memory/YYYY-MM-DD.md`
 - Long-term memory: `MEMORY.md` (main session only)
 - Soma spec: `agents/soma/SPEC.md`
+- Ridge config: `agents/meru/ridge/config.json`
+- Meru config: `agents/meru/meru_config.json`
 - Content drafts: `content-drafts/` (unpublished), `content-drafts/published/` (live)
 - Reports: `reports/`
 - Scripts: `scripts/`
@@ -100,6 +102,6 @@
 ---
 
 ## Known Issues / Watch Items
-- Soma triage was timing out at 120s on cbclaw2026 — now on gemini-flash-2.5 with 60s timeout, running clean
-- Manifest had been running 3-4x prior to Apr 9 reinstall — root cause: multiple installs accumulated. Now clean.
-- Publish reminder crons previously used `cp` (left drafts behind). Now corrected to `mv`.
+- github-push.py has hardcoded Anthropic API key — needs env var migration and key rotation
+- Node.js v25.8.1 is current/unstable — LTS would be safer long-term (deferred)
+- Soma triage was timing out at 120s on cbclaw2026 — resolved, running on gemini-flash-2.5 with 60s timeout
